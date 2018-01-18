@@ -1,0 +1,68 @@
+<!--pages/list/list.wxml-->
+<view class='content'>
+  <view class="freebox">
+    <view class="flaxtop">
+      <view class='userimg'>
+        <image class="userinfo-avatar" mode="widthfix" src="http://www.xunfengwx.com/images/date.png" background-size="cover"></image>
+        
+      </view>
+      <view class="carinfo">
+        <view class="carcode">车牌号：冀G2E175</view>
+        <view class="carabout">
+          <view class="varlogo"></view>
+          <view class='carname'>蒙迪欧 白色</view>
+        </view>
+        
+      </view>
+    </view>
+    <!-- <view class="flaxtop">
+        <view class="namepro">白杨</view>
+        <view class='phonenum'>18519023323</view>
+    </view> -->
+    <view class="flaxtop pt20">
+      <view class="cartime">12-10 18:30</view>
+      <view class="address flaxtop">
+        <view class="start">出发地</view>
+        <view class='ico'></view>
+        <view class='end'>目的地</view>
+      </view>
+      <view class="setunm flaxtop">
+        共<view class="ftext">2</view>个座位  
+      </view>
+    </view>
+    <view class='btn btnup'>查看行程</view>
+  </view>
+  <view class="freebox">
+    <view class="flaxtop">
+      <view class='userimg'>
+        <image class="userinfo-avatar" mode="widthfix" src="http://www.xunfengwx.com/images/date.png" background-size="cover"></image>
+        
+      </view>
+      <view class="carinfo">
+        <view class="carcode">车牌号：冀G2E175</view>
+        <view class="carabout">
+          <view class="varlogo"></view>
+          <view class='carname'>蒙迪欧 白色</view>
+        </view>
+        
+      </view>
+    </view>
+    <view class="flaxtop">
+        <view class="namepro">白杨</view>
+        <view class='phonenum'>18519023323</view>
+    </view>
+    <view class="flaxtop pt20">
+      <view class="cartime">12-10 18:30</view>
+      <view class="address flaxtop">
+        <view class="start">出发地</view>
+        <view class='ico'></view>
+        <view class='end'>目的地</view>
+      </view>
+      <view class="setunm flaxtop">
+        共<view class="ftext">2</view>个座位  
+      </view>
+      
+    </view>
+    <view class='btn btnup'>查看行程</view>
+  </view>
+</view>

@@ -1,0 +1,83 @@
+/* pages/list/list.wxss */
+.content{
+  padding-top: 60rpx;
+  min-height: 100vh
+}
+.freebox {
+  width: 680rpx;
+  margin: 0 auto 80rpx;
+  background-color: #fff;
+  
+}
+.flaxtop {
+  display: flex
+}
+.flaxtop .userimg{
+  width: 250rpx
+}
+.flaxtop .userimg image{
+  display: block;
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin: -36rpx auto auto
+}
+.flaxtop .carinfo{
+  flex: 1;
+  padding: 32rpx 0rpx
+}
+.carinfo {
+  font-size: 32rpx;
+}
+.namepro {
+  width: 250rpx;
+  text-align: center;
+  font-size: 40rpx
+}
+.phonenum {
+  background: rgba(58, 74, 160, 0.1);
+  padding:0rpx 30rpx ;
+  border-radius: 30rpx;
+  font-size: 28rpx;
+  color: #3b489f
+}
+.cartime, .address, .setunm{
+  flex: 1;
+  font-size: 28rpx;
+  text-align: center
+}
+.address{
+  flex: 2;
+  justify-content:space-between;
+  padding-right: 20rpx
+}
+.address .ico {
+  width: 64rpx;
+  background: url(https://www.xunfengwx.com/images/carlist.png) no-repeat  center center / 64rpx auto
+
+}
+.start, .end{
+  flex: 1;
+  text-align: center
+}
+.setunm .ftext {
+  background-color: #3b489f;
+  width: 32rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 4rpx;
+  margin: 0rpx 6rpx
+}
+.setunm {
+  align-items:center
+}
+.btnup{
+  width:180rpx;
+  margin: 0 auto;
+  position: relative;
+  top:30rpx
+}
