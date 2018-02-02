@@ -11,6 +11,18 @@
 	"libVersion": "1.6.6",
 	"appid": "wx1240577fef2af12c",
 	"projectname": "%E5%93%92%E5%93%92%E6%8B%BC%E8%BD%A6",
+	"tabBar": {
+		"list": [
+			{
+				"pagePath": "index",
+				"text": "首页"
+			},
+			{
+				"pagePath": "other",
+				"text": "其他"
+			}
+		]
+	},
 	"condition": {
 		"search": {
 			"current": -1,

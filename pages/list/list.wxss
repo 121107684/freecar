@@ -1,7 +1,6 @@
 /* pages/list/list.wxss */
 .content{
   padding-top: 60rpx;
-  min-height: 100vh
 }
 .freebox {
   width: 680rpx;
@@ -23,38 +22,28 @@
   background-color: #ccc;
   margin: -36rpx auto auto
 }
-.flaxtop .carinfo{
+.flaxtop .departure,
+.flaxtop .destination{
   flex: 1;
-  padding: 32rpx 0rpx
-}
-.carinfo {
-  font-size: 32rpx;
-}
-.namepro {
-  width: 250rpx;
-  text-align: center;
-  font-size: 40rpx
-}
-.phonenum {
-  background: rgba(58, 74, 160, 0.1);
-  padding:0rpx 30rpx ;
-  border-radius: 30rpx;
-  font-size: 28rpx;
-  color: #3b489f
-}
-.cartime, .address, .setunm{
-  flex: 1;
-  font-size: 28rpx;
+  padding: 12rpx 0rpx 15rpx;
   text-align: center
+} 
+.cartime{
+  flex: 1;
+  font-size:36rpx;
+  text-align: left;
+  text-indent: 1em
 }
-.address{
-  flex: 2;
-  justify-content:space-between;
-  padding-right: 20rpx
+.setunm {
+  width: 240rpx;
+  font-size: 32rpx;
+  text-align: right
 }
-.address .ico {
-  width: 64rpx;
-  background: url(https://www.xunfengwx.com/images/carlist.png) no-repeat  center center / 64rpx auto
+.ico {
+  width:200rpx;
+  height: 100rpx;
+  margin-top: -30rpx;
+  background: url(https://www.xunfengwx.com/images/carlist.png) no-repeat  center center / 160rpx auto
 
 }
 .start, .end{
@@ -63,19 +52,19 @@
 }
 .setunm .ftext {
   background-color: #3b489f;
-  width: 32rpx;
   height: 32rpx;
   line-height: 32rpx;
   color: #fff;
   font-weight: bold;
   text-align: center;
-  border-radius: 4rpx;
-  margin: 0rpx 6rpx
+  border-radius:8rpx;
+  margin: 0rpx 10rpx;
+  padding: 6rpx  
 }
 .setunm {
   align-items:center
 }
-.btnup{
+.weui-btn{
   width:180rpx;
   margin: 0 auto;
   position: relative;

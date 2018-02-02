@@ -1,0 +1,44 @@
+<!--pages/seeinfo/seeinfo.wxml-->
+<view class="page clearfix" >
+  <view class="flaxtop boxclass">
+      <view class='flc userimg'>
+          <image src='{{info.user.avatarUrl}}'></image>
+      </view>
+      <view class="userinfo">
+        <view class="username">{{info.user.usernametrue}}</view>
+        <view class="carinfo flaxtop">
+            <view class="carcode">{{info.user.carcode}}</view>
+            <view class="cartype">{{info.user.cartype}}</view>
+        </view>
+      </view>
+      <view class="calluser"  bindtap="calling"  data-callnum="{{info.user.phonenum}}">
+        <view class="callnum">（点击拨打）</view>
+      </view>
+  </view>
+  <view class="dateinfo boxclass">
+    <view class="thedate flaxtop">
+      <view class="date">{{info.car.date}}</view>
+      <view class="time">{{info.car.time}}</view>
+      <view class="plane">${{info.car.place}}</view>
+    </view>
+    <view class="place flaxtop">
+    <view class="placeinfo">
+      <view class="qd flaxtop">
+        <view class="addtitle">起：</view>
+        <view class="addarr">{{info.car.departure}}</view>
+      </view>
+      <view class="zd flaxtop">
+         <view class="addtitle">终：</view>
+        <view class="addarr">{{info.car.destination}}</view>
+      </view>
+    </view>
+      <view class="icozw">
+      <view class="zwnum">{{info.car.seatnum}}</view>
+      </view>
+    </view>
+    <view class='statenum'>
+      <view class="remarkstext">司机留言：</view>
+      <view class="remarksuse">{{info.car.memo}}</view>
+    </view>
+  </view>
+</view>

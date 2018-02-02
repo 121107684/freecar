@@ -1,0 +1,7 @@
+/* pages/release/release.wxss */
+.weui-cells__title + .weui-cells {
+    margin-top: 0;
+}
+.weui-btn-area{
+  margin-bottom: 200rpx
+}

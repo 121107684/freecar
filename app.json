@@ -1,14 +1,43 @@
 {
-  "pages":[
+  "pages": [
+    "pages/set/set",
     "pages/list/list",
+    "pages/seeinfo/seeinfo",
+    "pages/carinfo/carinfo",
+    "pages/release/release",
     "pages/index/index",
-    
     "pages/logs/logs"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#3b489f",
-    "navigationBarTitleText": "五五拼车",
-    "navigationBarTextStyle":"#fff"
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#3c5a98",
+    "navigationBarTitleText": "Fire in the hold",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#b56f10",
+    "selectedColor": "#f1dvb1",
+    "borderStyle": "#3c5a98",
+    "backgroundColor": "#3c5a98",
+    "list": [
+      { 
+        "selectedIconPath": "images/naviconact1.png",
+        "iconPath": "images/navicon1.png",
+        "pagePath": "pages/list/list",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/naviconact2.png",
+        "iconPath": "images/navicon2.png",
+        "pagePath": "pages/release/release",
+        "text": "发布"
+      },
+      {
+        "selectedIconPath": "images/naviconact3.png",
+        "iconPath": "images/navicon3.png",
+        "pagePath": "pages/set/set",
+        "text": "我的"
+      }
+    ]
   }
 }

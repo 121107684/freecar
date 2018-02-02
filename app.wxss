@@ -1,20 +1,62 @@
 /**app.wxss**/
+@import "./style/weui.wxss";
 
+.clearfix:before, 
+.clearfix:after { 
+  display: table; 
+  line-height: 0; 
+  content: ""; 
+} 
+ 
+.clearfix:after { 
+  clear: both; 
+} 
 .content {
   background-color: #f8f6f9;
   color: #555;
-  line-height: 1.3em
+  line-height: 1.3em;
+  min-height: 100%
+}
+page{
+  height: 100%
 }
 .pt20 {
   padding-top: 20rpx
 }
-.btn {
-  font-size: 32rpx;
-  padding:7rpx 28rpx;
+.weui-btn {
+  font-size: 34rpx;
+  padding:7rpx 14rpx;
   border-radius: 36rpx;
   color: #fff;
-  text-align: center
-}
-.btnup {
+  text-align: center;
   background: #3b489f
+}
+button[type="primary"]{
+  background-color: #3b489f
+}
+button-hover[type="primary"]{
+  background-color: #3b489f !important
+}
+.searchbar-result{
+    margin-top: 0;
+    font-size: 14px;
+}
+.searchbar-result:before{
+    display: none;
+}
+.weui-label{
+  font-size: 36rpx
+}
+.weui-cell__bd {
+  font-size: 32rpx;
+  color: #555
+}
+.nologin {
+  background: #f0f0f0;
+  min-height: 100%
+}
+.nologin .tologin{
+  margin: 200rpx auto 0rpx;
+  width: 240rpx;
+  font-size:36rpx
 }
