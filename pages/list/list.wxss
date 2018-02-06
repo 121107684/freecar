@@ -4,7 +4,7 @@
 }
 .freebox {
   width: 680rpx;
-  margin: 0 auto 80rpx;
+  margin: 0 auto 40rpx;
   background-color: #fff;
   
 }
@@ -68,5 +68,5 @@
   width:180rpx;
   margin: 0 auto;
   position: relative;
-  top:30rpx
+  top:6rpx
 }

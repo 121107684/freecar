@@ -8,11 +8,16 @@
 }
 .topbox image {
   display: flex;
-  width: 160rpx;
-  height: 160rpx;
-  border-radius: 90rpx;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 70rpx;
   border:10rpx solid #4a5ecb
 }
 .weui-cell{
     padding: 10rpx 15rpx;
+}
+.usernickname {
+  text-align: center;
+  color: #fff;
+  font-size: 32rpx
 }

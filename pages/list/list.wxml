@@ -53,7 +53,7 @@
       </view>
     </view>
 
-    <view class="flaxtop pt20">
+    <view class="flaxtop">
       <view class="cartime">{{listcar.date}}{{listcar.time}}</view>
 
       <view class="setunm flaxtop">

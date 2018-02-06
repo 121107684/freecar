@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/set/set",
     "pages/list/list",
+    "pages/set/set",
     "pages/seeinfo/seeinfo",
     "pages/carinfo/carinfo",
     "pages/release/release",
@@ -16,7 +16,7 @@
   },
   "tabBar": {
     "color": "#b56f10",
-    "selectedColor": "#f1dvb1",
+    "selectedColor": "#fff",
     "borderStyle": "#3c5a98",
     "backgroundColor": "#3c5a98",
     "list": [

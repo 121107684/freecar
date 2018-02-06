@@ -94,10 +94,10 @@ Page({
         }
       })
     }
-    app.publicpost("getuserinfo", "GET", {}, function (res) {
-      console.log(res)
+    // app.publicpost("getuserinfo", "GET", {}, function (res) {
+    //   console.log(res)
       
-    })
+    // })
 
   },
   tabClick: function (e) {

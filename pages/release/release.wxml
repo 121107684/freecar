@@ -54,7 +54,7 @@
           <view class="weui-label">日期</view>
         </view>
         <view class="weui-cell__bd">
-          <picker mode="date" name="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+          <picker mode="date" name="date" value="{{date}}" start="2018-01-01" end="2018-12-31" bindchange="bindDateChange">
             <view class="weui-input">{{date}}</view>
           </picker>
         </view>
