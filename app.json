@@ -1,11 +1,11 @@
 {
   "pages": [
     "pages/list/list",
+    "pages/index/index",
     "pages/set/set",
     "pages/seeinfo/seeinfo",
     "pages/carinfo/carinfo",
     "pages/release/release",
-    "pages/index/index",
     "pages/logs/logs"
   ],
   "window": {

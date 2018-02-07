@@ -1,47 +1,6 @@
 <!--pages/list/list.wxml-->
-<view class="page">
-  <view class="page__bd">
-    <view class="weui-search-bar">
-      <view class="weui-search-bar__form">
-        <view class="weui-search-bar__box">
-          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
-          <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
-          <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
-            <icon type="clear" size="14"></icon>
-          </view>
-        </view>
-        <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
-          <icon class="weui-icon-search" type="search" size="14"></icon>
-          <view class="weui-search-bar__text">搜索</view>
-        </label>
-      </view>
-      <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
-    </view>
-    <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
-      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
-        <view class="weui-cell__bd">
-          <view>实时搜索文本</view>
-        </view>
-      </navigator>
-      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
-        <view class="weui-cell__bd">
-          <view>实时搜索文本</view>
-        </view>
-      </navigator>
-      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
-        <view class="weui-cell__bd">
-          <view>实时搜索文本</view>
-        </view>
-      </navigator>
-      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
-        <view class="weui-cell__bd">
-          <view>实时搜索文本</view>
-        </view>
-      </navigator>
-    </view>
-  </view>
-</view>
-<view class='content'>
+
+<view class='content clearfix'>
   <view class="freebox" wx:for="{{listcar}}" wx:for-item="listcar" wx:key="id">
     <view class="flaxtop borbot">
       <view class="departure">
@@ -64,10 +23,10 @@
     <navigator class='weui-btn' bindtap='seeinfo' url='../seeinfo/seeinfo?userid={{listcar.id}}&carinfo={{listcar._id}}'>查看行程</navigator>
   </view>
 </view>
-<view class="weui-loadmore" hidden="{{isHideNoMore}}">
+<view class="weui-loadmore" wx:if="{{isHideNoMore}}">
   <view class="weui-loadmore__tips">----------我是有底线的----------</view>
 </view>
-<view class="weui-loadmore" hidden="{{isHideLoadMore}}">
+<view class="weui-loadmore" wx:else>
   <view class="weui-loading"></view>
   <view class="weui-loadmore__tips">正在加载</view>
 </view>

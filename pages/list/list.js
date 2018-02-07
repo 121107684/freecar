@@ -52,7 +52,6 @@ Page({
 
   },
   getlistdata:function(callback){
-    
     let getdata = {
       limit: this.data.size,
       index: this.data.index
@@ -75,7 +74,7 @@ Page({
    */
   onPullDownRefresh: function () {
     this.setData({
-       this: this.data.index + 1
+      index:1
     })
     function listfun(res, self) {
       self.setData({
@@ -90,16 +89,17 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    if ((this.data.index + 1) * 5 >= this.data.total) {
-      this.setData({
-        isHideNoMore: false
-      })
-    }
+    console.log((this.data.index) * 5 >= this.data.total)
+    // if ((this.data.index) * 5 >= this.data.total) {
+    //   this.setData({
+    //     isHideNoMore: false
+    //   })
+    // }
     this.setData({
       index:this.data.index + 1,
       isHideLoadMore: false
     })
-    if (!this.data.isHideNoMore){
+    if (!this.data.isHideLoadMore){
       console.log(this.data)
       return false
     }

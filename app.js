@@ -1,25 +1,30 @@
 import wxValidate from 'utils/wxValidate'
 App({
   onLaunch: function () {
-    let that = this
+    let that = this;
+    var thistoken = wx.getStorageSync('token');
     wx.checkSession({
       success: function (res) {
         //session 未过期，并且在本生命周期一直有效
         //console.log("走了这里",res)
-        that.getuserinfo()
+        that.getuserinfo();
+        if (thistoken == "" || thistoken == undefined){ 
+          //that.alert(thistoken)
+        }
+        that.userlogin()
       },
       fail: function (res) {
         //登录态过期
         console.log(res)
         that.userlogin()
-
+        that.alert(thistoken)
       }
     })
   },
   globalData: {
     userInfo: null,
-    //pubilcUrl: "http://127.0.0.1:3000/",
-    pubilcUrl: "https://www.xunfengwx.com/",
+    pubilcUrl: "http://127.0.0.1:3000/",
+    //pubilcUrl: "https://www.xunfengwx.com/",
     loginStatus: false
   },
   wxValidate: (rules, messages) => new wxValidate(rules, messages),
@@ -74,7 +79,6 @@ App({
     let that = this;
     wx.login({
       success: res => {
-        console.log(res);
         wx.request({
           url: that.globalData.pubilcUrl+"login/login",
           method: 'POST',
@@ -83,7 +87,8 @@ App({
           },
           success: function (res) {
             wx.setStorageSync('token', res.data.data)
-            that.getuserinfo()
+            that.getuserinfo();
+            //that.alert(res.data.data);
           }
         })
       }
@@ -91,5 +96,11 @@ App({
   },
   userInfoReadyCallback: function (res) {
     this.globalData.userInfo = res.userInfo
+  },
+  alert:function(data){
+    wx.showToast({
+      title: data,
+      duration: 2000
+    })
   }
 })
