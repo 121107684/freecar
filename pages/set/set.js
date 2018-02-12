@@ -7,14 +7,15 @@ Page({
    */
   data: {
     tabs: ["个人中心", "我的发布"],
-    activeIndex: 0,
+    activeIndex: 1,
     sliderOffset: 0,
     sliderLeft: 0,
-    usernametrue:'白杨',
-    age: 28,
-    cartype: '福特',
-    phonenum:18519023323,
-    carcode: '冀G2E175',
+    gqtime:new Date().getTime(),
+    // usernametrue:'白杨',
+    // age: 28,
+    // cartype: '福特',
+    // phonenum:18519023323,
+    // carcode: '冀G2E175',
     submitHidden: true,
     nologin:false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
@@ -94,11 +95,24 @@ Page({
         }
       })
     }
-    // app.publicpost("getuserinfo", "GET", {}, function (res) {
-    //   console.log(res)
-      
-    // })
-
+  },
+  onShow: function () {
+    this.getuserinfo()
+    this.getuserpage()
+  },
+  getuserpage:function(){
+    app.publicpost("getuserpage", "GET", {}, (res) => {
+      console.log(res)
+      this.setData({
+        listcar: res.data.data
+      })
+    })
+  },
+  getuserinfo:function(){
+    app.publicpost("getuserinfo", "GET", {}, (res) => {
+      console.log(res)
+      this.setData({ ...res.data.data })
+    })
   },
   tabClick: function (e) {
     this.setData({
@@ -130,9 +144,7 @@ Page({
       phonenum: e.detail.value.phonenum,
       carcode: e.detail.value.carcode
     }
-    console.log(postdata)
     app.publicpost("adduser", "POST", postdata,function(res){
-      console.log(res)
       wx.showToast({
         title: res.title,
         icon: 'success',
@@ -142,5 +154,43 @@ Page({
     })
     
   },
-  
+  del:function(e){
+    var that = this
+    wx.showActionSheet({
+      itemList: ['修改', '删除'],
+      success: function (res) {
+        switch (res.tapIndex){
+          case 0:
+            wx.reLaunch({
+              url: '../release/release?id=' + e.target.dataset.id
+            })
+            break;
+          case 1:
+            console.log("aaaa")
+            wx.showModal({
+              title: '提示',
+              content: '确定删除此条信息',
+              success: function (res) {
+                if (res.confirm) {
+                  console.log(e.target.dataset.id);
+                  app.publicpost("cardel", "POST", { "id": e.target.dataset.id }, function (res) {
+                    console.log(res)
+                    wx.showToast({
+                      title: res.data.title,
+                      icon: 'success',
+                      duration: 2000
+                    })
+                    that.getuserpage()
+                  })
+                } else if (res.cancel) {
+                  console.log('用户点击取消')
+                }
+              }
+            })
+            break;
+        }
+        
+      }
+    });
+  }
 })

@@ -1,6 +1,8 @@
 /**app.wxss**/
 @import "./style/weui.wxss";
-
+html, body, page{
+  background-color: #f0f0f0
+}
 .clearfix:before, 
 .clearfix:after { 
   display: table; 
@@ -10,7 +12,13 @@
  
 .clearfix:after { 
   clear: both; 
-} 
+}
+.fl{
+  float: left
+}
+.fr{
+  float: right
+}
 .content {
   background-color: #f8f6f9;
   color: #555;
@@ -24,9 +32,8 @@ page{
   padding-top: 20rpx
 }
 .weui-btn {
-  font-size: 34rpx;
+  font-size: 28rpx;
   padding:7rpx 10rpx;
-  border-radius: 16rpx;
   color: #fff;
   text-align: center;
   background: #3b489f
@@ -60,4 +67,75 @@ button-hover[type="primary"]{
   background: rgba(255, 255, 255, .2);
   color: #fff;
   border:1px solid #fff
+}
+
+.flaxbox{
+  display: flex
+}
+.listele{
+  width: 720rpx;
+  margin:0rpx 15rpx 15rpx;
+  background: url(https://www.xunfengwx.com/images/gogogo.png) no-repeat center right / 80rpx auto #fff
+}
+.listele .title{
+  font-size:30rpx;
+  border-bottom: 1px solid #ccc;
+  margin: 0 15rpx;
+  line-height: 70rpx;
+  justify-content: space-between
+}
+.listele .title .clock{
+  padding-left: 50rpx;
+  background: url(https://www.xunfengwx.com/images/clock.png) no-repeat center left / 40rpx auto
+}
+.listele .title .fr {
+  padding-left: 50rpx;
+  background: url(https://www.xunfengwx.com/images/money.png) no-repeat center left / 40rpx auto
+}
+.listele .footer {
+  border-top: 1px solid #ccc;
+  margin: 0 15rpx;
+  line-height: 70rpx;
+  font-size:24rpx;
+}
+.listele .bodyele .useinfo{
+  width: 120rpx;
+  padding: 16rpx;
+  text-align: center;
+  font-size: 24rpx;
+}
+.listele .bodyele image{
+  display: block;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 70rpx
+}
+.listele .bodyele .center{
+  flex: 1;
+  padding-top: 15rpx;
+  font-size: 26rpx;
+}
+.listele .bodyele .center .cartype {
+  padding-left: 90rpx;
+  padding-right: 30rpx;
+  background: url(https://www.xunfengwx.com/images/car.png) no-repeat center left / 80rpx auto
+}
+.listele .bodyele .center .start,
+.listele .bodyele .center .end{
+  padding-left: 24rpx;
+  position: relative
+}
+.listele .bodyele .center .start::after,
+.listele .bodyele .center .end::after{
+  content: " ";
+  position: absolute;
+  top:18rpx;
+  left: 0rpx;
+  width: 14rpx;
+  height: 14rpx;
+  border-radius: 7rpx;
+  background-color: green
+}
+.listele .bodyele .center .end::after {
+  background-color: red
 }

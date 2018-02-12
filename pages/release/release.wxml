@@ -1,5 +1,7 @@
 <!--pages/release/release.wxml-->
-<view class="page">
+<view class="content clearfix">
+
+<view class="page clearfix">
 <form bindsubmit="releaseupdata" bindreset="formReset">
   <view class="page__bd">
     <view class="weui-cells weui-cells_after-title">
@@ -89,4 +91,5 @@
     <button formType="submit" class="weui-btn" type="primary">确定</button>
   </view>
 </form>
+</view>
 </view>

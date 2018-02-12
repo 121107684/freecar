@@ -1,27 +1,35 @@
 <!--pages/list/list.wxml-->
 
 <view class='content clearfix'>
-  <view class="freebox" wx:for="{{listcar}}" wx:for-item="listcar" wx:key="id">
-    <view class="flaxtop borbot">
-      <view class="departure">
-        {{listcar.departure}}
-      </view>
-      <view class='ico'></view>
-      <view class="destination">
-         {{listcar.destination}}
-      </view>
-    </view>
 
-    <view class="flaxtop">
-      <view class="cartime">{{listcar.date}}{{listcar.time}}</view>
 
-      <view class="setunm flaxtop">
-        共
-        <view class="ftext">{{listcar.seatnum}}</view>个座位
+  <view class="listele" wx:for="{{listcar}}" wx:for-item="listcar" wx:key="id">
+      <view class="title flaxbox">
+          <view class="clock">{{listcar.date}}  /  {{listcar.time}}</view>
+          <view class="fr">{{listcar.place}}</view>
       </view>
-    </view>
-    <navigator class='weui-btn' bindtap='seeinfo' url='../seeinfo/seeinfo?userid={{listcar.id}}&carinfo={{listcar._id}}'>查看行程</navigator>
+      <navigator class="bodyele  flaxbox" url='../seeinfo/seeinfo?userid={{listcar.id}}&carinfo={{listcar._id}}'>
+        <view class="useinfo">
+           <view><image src="{{listcar.avatarUrl}}"></image></view>
+        </view>
+        <view  class="center">
+          <view class='flaxbox'>
+            <view class="cartype">大众</view>
+            <view class="allset">总计{{listcar.seatnum}}座</view>  
+          </view>
+          <view class="start">
+            <view>{{listcar.departure}}</view>
+          </view>
+          <view class="end">
+            <view>{{listcar.destination}}</view>
+          </view>
+        </view>  
+      </navigator>
+      <view class="footer">
+        <view class="memo">{{listcar.memo}}</view>
+      </view>
   </view>
+  
 </view>
 <view class="weui-loadmore" wx:if="{{isHideNoMore}}">
   <view class="weui-loadmore__tips">----------我是有底线的----------</view>

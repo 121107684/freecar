@@ -6,7 +6,7 @@ App({
     wx.checkSession({
       success: function (res) {
         //session 未过期，并且在本生命周期一直有效
-        //console.log("走了这里",res)
+        console.log("走了这里",res)
         that.getuserinfo();
         if (thistoken == "" || thistoken == undefined){ 
           //that.alert(thistoken)
@@ -16,8 +16,8 @@ App({
       fail: function (res) {
         //登录态过期
         console.log(res)
-        that.userlogin()
-        that.alert(thistoken)
+        // that.getuserinfo()
+        // that.alert(thistoken)
       }
     })
   },
@@ -30,6 +30,14 @@ App({
   wxValidate: (rules, messages) => new wxValidate(rules, messages),
   publicpost: function (url, method, data, successcall, servererror) {
     var thistoken = wx.getStorageSync('token')
+    if(this.token==""){
+      wx.showToast({
+        title: "用户未登陆",
+        icon: 'success',
+        image: '/images/error.png',
+        duration: 2000
+      })
+    }
     let postdata = {
       token: thistoken,
       data: { ...data }
@@ -54,8 +62,9 @@ App({
     wx.getUserInfo({
       success: res => {
         console.log(res)
+        //that.userlogin()
         that.globalData.userInfo = res.userInfo
-        that.updatauser(res.userInfo)
+        //that.updatauser(res.userInfo)
         if (that.userInfoReadyCallback) {
           that.userInfoReadyCallback(res)
         }
@@ -87,7 +96,7 @@ App({
           },
           success: function (res) {
             wx.setStorageSync('token', res.data.data)
-            that.getuserinfo();
+            //that.getuserinfo();
             //that.alert(res.data.data);
           }
         })

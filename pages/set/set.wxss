@@ -1,4 +1,8 @@
 /* pages/set/set.wxss */
+.bg-ccc {
+  background-color: #f0f0f0;
+  padding-top: 15rpx
+}
 .topbox{
   height: 260rpx;
   background: #3b489f;
@@ -20,4 +24,33 @@
   text-align: center;
   color: #fff;
   font-size: 32rpx
+}
+.listele{
+  background-image: none
+}
+.listele .center {
+  padding-left: 20rpx
+}
+.listele .del {
+  width: 100rpx;
+  background: url(https://www.xunfengwx.com/images/set.png) no-repeat center center / 40rpx auto #fff;
+  margin-right: 15rpx;
+  transition: all .5s
+}
+.listele .del:active{
+  background-color: #ccc
+}
+.listele{
+  position: relative
+}
+.ygq{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 200rpx
+}
+.ygq image{
+  display: block;
+  width: 140rpx;
+  opacity: .5
 }

@@ -5,3 +5,9 @@
 .weui-btn-area{
   margin-bottom: 200rpx
 }
+.page {
+  width: 670rpx;
+  margin: 20rpx auto;
+  padding: 20rpx;
+  background: #fff
+}

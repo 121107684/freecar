@@ -42,11 +42,17 @@ Page({
    */
   onLoad: function (options) {
     function listfun(res,self){
+      self.caranduser(res.data.data.car, res.data.data.users)
       self.setData({
-        listcar: res.data.data,
-        total: res.data.total
+        listcar: res.data.data.car,
+        total: res.data.data.total
       })
-      
+      console.log(self.data.listcar)
+      if (self.data.listcar.length <= self.data.total){
+        self.setData({
+          isHideNoMore: false
+        })
+      }
     }
     this.getlistdata(listfun);
 
@@ -77,9 +83,10 @@ Page({
       index:1
     })
     function listfun(res, self) {
+      self.caranduser(res.data.data.car, res.data.data.users)
       self.setData({
-        listcar: res.data.data,
-        total: res.data.total
+        listcar: res.data.data.car,
+        total: res.data.data.total
       })
     }
     wx.showNavigationBarLoading()
@@ -89,28 +96,30 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    console.log((this.data.index) * 5 >= this.data.total)
-    // if ((this.data.index) * 5 >= this.data.total) {
-    //   this.setData({
-    //     isHideNoMore: false
-    //   })
-    // }
+    if (this.data.isHideLoadMore) {
+      console.log(this.data.isHideLoadMore)
+      return false
+    }
+    //console.log((this.data.index) * 5 >= this.data.total)
     this.setData({
       index:this.data.index + 1,
       isHideLoadMore: false
     })
-    if (!this.data.isHideLoadMore){
-      console.log(this.data)
-      return false
-    }
+    
     this.getlistdata(addarr);
     function addarr(res,self){
       console.log(self)
-      self.data.listcar = self.data.listcar.concat(res.data.data)
+      self.caranduser(res.data.data.car, res.data.data.users)
+      self.data.listcar = self.data.listcar.concat(res.data.data.car)
       self.setData({
         isHideLoadMore: true,
         listcar: self.data.listcar
       })
+      if (self.data.listcar.length <= self.data.total) {
+        self.setData({
+          isHideNoMore: true
+        })
+      }
     }
   },
 
@@ -120,7 +129,14 @@ Page({
   onShareAppMessage: function () {
   
   },
-  seeinfo:function(){
-    
+  caranduser:function(carlist,userlist){
+    for(var i in carlist){
+      for(var j in userlist){
+        if(carlist[i].id==userlist[j].openid){
+          carlist[i] = { ...carlist[i], ...userlist[j]};
+          break;
+        }
+      }
+    }
   }
 })

@@ -63,6 +63,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
+    if (options.id){
+      this.getolddata(options.id)
+    }
     this.WxValidate = app.wxValidate(
       {
         departure: {
@@ -100,6 +104,11 @@ Page({
         }
       }
     )
+  },
+  getolddata:function(id){
+    app.publicpost("getolddata", "get",{"id":id}, (res)=>{
+      console.log(res)
+    })
   },
   releaseupdata: function (e) {
     //提交错误描述

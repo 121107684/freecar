@@ -28,6 +28,9 @@
   font-size: 32rpx;
   line-height: 60rpx
 }
+.boxclass .carinfo .cartype{
+  padding-left: 20rpx
+}
 .boxclass .userinfo .username {
   font-size: 40rpx
 }
