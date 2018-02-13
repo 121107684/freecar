@@ -6,13 +6,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    departure:"北京",
-    destination:"怀来县",
-    seatnum:3,
-    place:50,
-    date:'2018-07-01',
-    time:"21:00",
-    memo:"大件行李提前告知",
+    // departure:"北京",
+    // destination:"怀来县",
+    // seatnum:3,
+    // place:50,
+    // date:'2018-07-01',
+    // time:"21:00",
+    // memo:"大件行李提前告知",
     array: ['仅一次', '每日', '每周', '其他'],
     arrindex:0
   },
@@ -107,12 +107,13 @@ Page({
   },
   getolddata:function(id){
     app.publicpost("getolddata", "get",{"id":id}, (res)=>{
-      console.log(res)
+      this.setData(res.data.data)
+      //console.log(res)
     })
   },
   releaseupdata: function (e) {
     //提交错误描述
-    console.log(e)
+    
     if (!this.WxValidate.checkForm(e)) {
       const error = this.WxValidate.errorList[0]
       // `${error.param} : ${error.msg} `
@@ -127,7 +128,7 @@ Page({
     // this.setData({ submitHidden: false })
     var that = this
     //提交
-
+    console.log(this.data._id)
     const postdata = {
       departure: e.detail.value.departure,
       destination: e.detail.value.destination,
@@ -137,6 +138,9 @@ Page({
       time: e.detail.value.time,
       memo: e.detail.value.memo,
       arrindex: e.detail.value.arrindex,
+    }
+    if (this.data._id){
+      postdata._id = this.data._id
     }
     
     app.publicpost("addgo", "POST", postdata, function (res) {
